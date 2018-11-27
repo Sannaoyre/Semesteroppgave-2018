@@ -75,7 +75,7 @@
 
 .board_field{
   background-color: white;
-  height: 110px;
+  height: 80px;
   margin: 12px;
   text-align: center;
   width: 100%;
@@ -83,7 +83,7 @@
 }
 
 .board__number{
-  padding: 40px;
+  padding: 30px;
   color: #474D48;
   font-family: 'Game of Thrones';
   font-weight: bolder;
@@ -92,8 +92,29 @@
 .row__reverse{
   flex-direction: row-reverse;
   display: flex;
-  
- 
+}
+.board_field--danger{
+  background-image: linear-gradient(#75180D, black);
+}
+
+.board__number--danger{
+  color: white;
+}
+
+
+
+
+.game__button{
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 3px;
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+  border: none;
+  background-image: linear-gradient(#75180D, black);
+  color: white;
 }
 
 /*Animation on Final Page*/
