@@ -1,0 +1,195 @@
+/*Basics*/
+.row{
+  margin-left: 0px;
+  margin-right: 0px;
+  display: flex;
+}
+
+.row::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class^="col-"]{
+  float: left;
+  padding: 15px;
+  width: 100%;
+}
+
+
+/*Header*/
+.bar{
+  background-color: rgb(71, 77, 72);
+  border-radius: 3px;
+  z-index: 999;
+  display: block;
+}
+
+.bar__headline{
+  color: white;
+  padding: 10px;
+  font-family: 'Game of Thrones';
+  font-size: 16px;
+}
+
+/*Characters*/
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.card {
+  margin: 1rem;
+  background-image: linear-gradient(180deg, #474D48 0%, #000000 100%);
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+  border-radius: 3px;
+  overflow: hidden;
+  transition: all .2s linear;
+}
+
+.card:hover {
+  box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+  transform: translate3D(0, -2px, 0);
+}
+
+.card__list{
+  padding: 5px;
+  color: white;
+}
+
+
+
+/*Board game*/
+.container__game{
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.board{
+  background-color: rgba(71, 77, 72, 0.9);
+
+}
+
+.board_field{
+  background-color: white;
+  height: 110px;
+  margin: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.board__number{
+  padding: 40px;
+  color: #474D48;
+  font-family: 'Game of Thrones';
+  font-weight: bolder;
+}
+
+.row__reverse{
+  flex-direction: row-reverse;
+  display: flex;
+  
+ 
+}
+
+/*Animation on Final Page*/
+.ani {
+    -webkit-animation: myfirst 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
+    animation: myfirst 5s linear 2s infinite alternate;
+    float: right;
+    margin-top: -580px;
+    position: relative;
+    z-index: -1;
+}
+
+@keyframes myfirst {
+    0%   {right:0px; top:0px;}
+    25%  {right:10px; top:100px;}
+    50%  {right:400px; top:400px;}
+    75%  {right:0px; top:600px;}
+    100% {right:200px; top:0px;}
+}
+
+
+.final__headline{
+  font-family: 'Game of Thrones';
+  text-align: center;
+}
+
+.final__button{
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 3px;
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+  border: none;
+  
+  
+}
+.final__button:hover{
+  background-color: rgb(71, 77, 72);
+}
+
+
+
+@media screen and (min-width: 600px) {
+.col-m-1 {width: 8.33%;}
+.col-m-2 {width: 16.66%;}
+.col-m-3 {width: 25%;}
+.col-m-4 {width: 33.33%;}
+.col-m-5 {width: 41.66%;}
+.col-m-6 {width: 50%;}
+.col-m-7 {width: 58.33%;}
+.col-m-8 {width: 66.66%;}
+.col-m-9 {width: 75%;}
+.col-m-10 {width: 83.33%;}
+.col-m-11 {width: 91.66%;}
+.col-m-12 {width: 100%;}
+
+
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+
+  .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+}
+
+
+
+
+
+@media screen and (min-width: 900px) {
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+  .card {
+    flex: 1 1 calc(33% - 2rem);
+  }
+
+    .bar{
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+
+}
+
