@@ -80,11 +80,12 @@
   text-align: center;
   width: 100%;
   border-radius: 3px;
+  background-image: linear-gradient(#C1BDB6, #474D48);
 }
 
 .board__number{
   padding: 30px;
-  color: #474D48;
+  color: #f2f2f2;
   font-family: 'Game of Thrones';
   font-weight: bolder;
 }
@@ -97,9 +98,7 @@
   background-image: linear-gradient(#75180D, black);
 }
 
-.board__number--danger{
-  color: white;
-}
+
  
 .player{
   height: 300px;

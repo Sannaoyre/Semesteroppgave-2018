@@ -44,6 +44,7 @@ fetch ('https://anapioficeandfire.com/api/characters' + myCardData[i].api)
 
 var card = document.createElement('div');
     card.setAttribute('class', 'card');
+    card.setAttribute("onclick", "myFunction(this)");
 
 var h1 = document.createElement('h1');
 
@@ -79,24 +80,33 @@ var p3 = document.createElement('p');
 
 
 
-
 container.appendChild(card);
     card.appendChild(h1);
     card.appendChild(img);
-  card.appendChild(ul);
+    card.appendChild(ul);
       ul.appendChild(li);
       ul.appendChild(li2);
       ul.appendChild(li3);
-      li.appendChild(p);
+        li.appendChild(p);
         li2.appendChild(p2);
         li3.appendChild(p3);
-
-
-
-
     
 });
 
-
-
 }
+
+
+
+
+function myFunction(target){
+  var findImg = target.querySelectorAll("img");
+  console.log(findImg[0]);
+ 
+}
+
+
+
+
+
+
+
