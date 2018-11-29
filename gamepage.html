@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game of ladders</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="css/blockelements.css">
+</head>
+
+<body onload="getStorage()">
+<div>
+<img src="photos/logo.png" alt="logo">
+</div>
+
+<div class="[ bar ]">
+	<h3 class="[ bar__headline ]">Start playing</h3>
+</div>
+<a href="index.html"><button>Go back</button></a>
+
+<div class="[ container__game ] [ col-m-12 ]">
+	<div class="[ row ]">
+		<div class="[ col-m-4 ]">
+			<div class="[ col-m-12 ]">
+				<div class="[ row ]">
+
+					<div class="[ col-m-6 ]">
+						<p id="player1__name"></p>
+						<div id="player1__img"></div>
+						<p class="[ player__number ]">Player 1</p>
+					</div>
+					<div class="[ col-m-6 ]">
+						<p id="player2__name"></p>
+						<div id="player2__img"></div>
+						<p class="[ player__number ]">Player 2</p>
+					</div>
+					
+				</div>    
+			</div>
+		</div>
+
+	    <div class="[ col-m-8 ]  [ board ]">
+			<div class="[ col-m-12 ]">
+
+				<div class="[ row ]">
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">25</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">26</p>
+					</div>
+					<div class="[ board_field ] [ board_field--danger ]">
+						<p class="[ board__number ]">27</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">28</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">29</p>
+					</div>
+					<div class="[ board_field ] [ board_field--img ]">
+						<img src="photos/ironthrone.png" alt="icon of the iron throne">
+					</div>
+				</div>
+
+				<div class="[ row ] [ row__reverse ]">
+					<div class="[ board_field ] [ board_field--danger ]">
+						<p class="[ board__number ]">19</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">20</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">21</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">22</p>
+					</div>
+					<div class="[ board_field ] [ board_field--img ]">
+						<img src="photos/castlerock.png" alt="icon of castle rock">
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">24</p>
+					</div>
+				</div>
+
+				<div class="[ row ]">
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">13</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">14</p>
+					</div>
+					<div class="[ board_field ]  [ board_field--danger ]">
+						<p class="[ board__number ]">15</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">16</p>
+					</div>
+					<div class="[ board_field ] [ board_field--img ]">
+						<img src="photos/castleblack.png" alt="icon of castle black">
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">18</p>
+					</div>
+				</div>
+
+			     <div class="[ row ] [ row__reverse ]">
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">7</p>
+					</div>
+					<div class="[ board_field ] [ board_field--danger ]">
+						<p class="[ board__number ]">8</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">9</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">10</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">11</p>
+					</div>
+					<div class="[ board_field ] [ board_field--img ]">
+						<img src="photos/dragonstone.png" alt="icon of the dragonstone">
+					</div>
+				</div>
+
+				<div class="[ row ]">
+					<div class="[ board_field ]">
+						<p class="board__number">1</p>
+					</div>
+					<div class="[ board_field ] [ board_field--danger ]">
+						<p class="[ board__number ]">2</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">3</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">4</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]">5</p>
+					</div>
+				    <div class="[ board_field ]">
+				    	<p class="[ board__number ]">6</p>
+				    </div>		
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="[ dice__button ]">
+	<p id="placeholder"></p>
+	<button id="game__button">Role the dice!</button>
+</div>
+
+
+
+
+
+
+<script type="text/javascript" src="js/characters.js" defer></script>
+<script type="text/javascript" src="js/dice.js" defer></script>
+</body>
+</html>
