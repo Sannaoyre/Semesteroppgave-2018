@@ -92,8 +92,8 @@ function myFunction(URL, IMG) {
 
     
 function getStorage() {
-  var url = localStorage.getItem('Player1');
-  document.getElementById("player1__name").innerHTML = url;
+ // var url = localStorage.getItem('Player1');
+//document.getElementById("player1__name").innerHTML = url;
 
   var img = localStorage.getItem('Img1');
   var image = document.createElement('img');
@@ -101,8 +101,8 @@ function getStorage() {
   player1__img.appendChild(image);
 
 
-  var url2 = localStorage.getItem('Player2');
-  document.getElementById("player2__name").innerHTML = url2;
+ // var url2 = localStorage.getItem('Player2');
+  //document.getElementById("player2__name").innerHTML = url2;
 
   var img2 = localStorage.getItem('Img2');
   var image2 = document.createElement('img');
