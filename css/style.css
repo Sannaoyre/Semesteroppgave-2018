@@ -181,7 +181,7 @@ font-size: 18px;
     -webkit-animation: myfirst 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: myfirst 5s linear 2s infinite alternate;
     float: right;
-    margin-top: -610px;
+    margin-top: -490px;
     position: relative;
     z-index: -1;
 }
@@ -215,6 +215,7 @@ font-size: 18px;
 .final__button:hover{
   background-color: rgb(71, 77, 72);
 }
+
 
 
 

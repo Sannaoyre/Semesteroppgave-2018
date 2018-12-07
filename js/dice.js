@@ -176,6 +176,12 @@ button.onclick = function() {
 };
 
 
-
+  function showWinner() { 
+  var winnerImg = localStorage.getItem('winner');
+  var winnerImage = document.createElement('img');
+  winnerImage.src = winnerImg;
+  winnerImage.setAttribute('id', 'showWinner');
+  winner.appendChild(winnerImage);
+   }
 
 
