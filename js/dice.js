@@ -8,6 +8,8 @@ var player2 = false;
 var player1Pos = 1;
 var player2Pos = 1;
 
+
+
 var board = ["", 
 	"boardField1", 
 	"boardField2", 
@@ -48,7 +50,7 @@ var board = ["",
 function setPlayers(p1=1, p2=1) {
 
   console.log (p1, p2, player1, player2); 
-  // Slette de forrige token
+
 
 	if (player1 || (p1 == p2 && p1 == 1)) {
 	  var img = localStorage.getItem('Img1');
@@ -57,6 +59,7 @@ function setPlayers(p1=1, p2=1) {
 	  var el1 = document.getElementById(board[p1]); 
 	  el1.appendChild(player1img);
 	  player1img.setAttribute('id', 'player1');
+
 	} 
 	if (player2 || (p1 == p2 && p1 == 1)) {
 	  var img2 = localStorage.getItem('Img2');
@@ -66,6 +69,8 @@ function setPlayers(p1=1, p2=1) {
 	  el2.appendChild(player2img);
 	  player2img.setAttribute('id', 'player2');
 	}  
+
+	
 
 }
 
@@ -81,8 +86,16 @@ function playTurn(result){
 		console.log ("SubElement: " + image);
 		el.removeChild(image);
 		console.log ("Element: " + el.innerHTML);
+		document.getElementById("whichplayer").textContent = "Player 2, it´s your turn!";
 
 		player1Pos += result;
+
+		if (player1Pos >= 30) {
+			// Player 1 har vunnet
+			player1Pos = 30;
+			var img = localStorage.getItem('Img1');
+			localStorage.setItem('winner', '' + img);
+		}
 	} else {
 		var el = document.getElementById(board[player2Pos]);
 		console.log ("Element: " + el.innerHTML);
@@ -90,16 +103,31 @@ function playTurn(result){
 		console.log ("SubElement: " + image);
 		el.removeChild(image);
 		console.log ("Element: " + el.innerHTML);
-
+		document.getElementById("whichplayer").textContent = "Player 1, it´s your turn!";
 
 		player2Pos += result;
+		if (player2Pos >= 30) {
+			// Player 2 har vunnet
+			player2Pos = 30;
+
+			var img2 = localStorage.getItem('Img2');
+			localStorage.setItem('winner', '' + img2);
+		
+
+		}
 	}
 
-
-
 	setPlayers(player1Pos, player2Pos);
-	
 
+	if (player1Pos == 30 || player2Pos === 30) {
+		setTimeout (finished, 1000)
+	}
+	
+}
+
+
+function finished() {
+	location.href = 'finalpage.html';
 }
 
 
@@ -147,10 +175,7 @@ button.onclick = function() {
   // Remove token from tile which it is on and move it to ID that corresponds to the number rolled on the dice. TODO
 };
 
-//document.getElementById('boardField1').innerHTML = "1";
-//playerTile = 1;
-//numberOnDice = 5;
 
-//newTile = document.getElementById("boardField1"+ (playerTile+numberOnDice)).innerHTML = '<img src=characters/"' + aray + '.png />';
+
 
 

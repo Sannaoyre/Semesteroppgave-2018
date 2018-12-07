@@ -10,18 +10,23 @@
   <link href="css/blockelements.css" rel="stylesheet">
 </head>
 
+
+<!--Different background -dragon out of picture-->
 <style type="text/css">
 	body{
 		background-image: url(photos/background_clean-min.png) !important;
 	}
 </style>
 
-<body>
+<body onload="showWinner()">
 
+<!--Logo-->
 <div>
   <img src="photos/logo.png">
 </div>
 
+
+<!--Bar headline-->
 <div class="[ row ] [ bar ]">
   <div class="col-m-12"><!--The brackets don´t work here-->
 
@@ -31,13 +36,14 @@
 
     <div class="[ col-m-2 ]">
     </div>
-
   </div>
 </div>
 
+
+<!--Content-->
 <div class="[ final ]">
 	<h2 class="[ final__headline ]">congratulations, you won!</h2>
-	<img src="https://via.placeholder.com/300">
+	<div id="winner"></div>
 	<a href="index.html"><button class="[ final__button ]">Play again</button></a>
 </div>
 
@@ -46,6 +52,23 @@
 </div>
 
 
-  <script type="text/javascript" src="js/characters.js" defer></script>
+<script type="text/javascript">
+  function showWinner() { 
+  var winnerImg = localStorage.getItem('winner');
+  var winnerImage = document.createElement('img');
+  winnerImage.src = winnerImg;
+  winner.appendChild(winnerImage);
+   }
+</script>
+
+
+
+<script type="text/javascript" src="js/characters.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
