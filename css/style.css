@@ -36,10 +36,13 @@
 .bar__link{
 margin: 0;
 padding: 0px;
-font-size: 18px;
 }
 
+.bar__link--text{
+color: #f2f2f2;
+font-size: 18px;
 
+}
 
 /*Characters*/
 #root {
@@ -81,7 +84,6 @@ font-size: 18px;
   background-color: rgba(71, 77, 72, 0.9);
   border-radius: 3px;
   padding: 10px;
-
 }
 
 .board_field{
@@ -92,7 +94,6 @@ font-size: 18px;
   width: 100%;
   border-radius: 3px;
   background-image: linear-gradient(#C1BDB6, #474D48);
-
 }
 
 .board__number{
@@ -100,7 +101,13 @@ font-size: 18px;
   color: #f2f2f2;
   font-family: 'Game of Thrones';
   font-weight: bolder;
+  position: relative;
 }
+
+#board_field--dragonstone{
+  background: url(photos/dragonstone.png) center no-repeat;
+}
+
 
 .row__reverse{
   flex-direction: row-reverse;
@@ -146,13 +153,32 @@ font-size: 18px;
   margin-top: -230px;
 }
 
+#player1{
+  width: 25px;
+  right: 50px;
+  bottom: 5px;
+  display: inline-block;
+  margin: 0 auto;
+  position: absolute;
+
+}
+
+#player2{
+  width: 50px;
+  bottom: 5px;
+  display: inline-block;
+  margin: 0 auto;
+  position: absolute;
+
+}
+
 
 /*Animation on Final Page*/
 .ani {
     -webkit-animation: myfirst 5s linear 2s infinite alternate; /* Safari 4.0 - 8.0 */
     animation: myfirst 5s linear 2s infinite alternate;
     float: right;
-    margin-top: -580px;
+    margin-top: -610px;
     position: relative;
     z-index: -1;
 }

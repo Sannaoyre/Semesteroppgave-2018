@@ -3,8 +3,9 @@ const container = document.createElement('div');
 container.setAttribute('class', 'container');
 var counter = 0;
 
-
-app.appendChild(container);
+if (app!==null) {
+    app.appendChild(container);
+}
 
 var myCardData = [];
 
@@ -76,7 +77,6 @@ function myFunction(URL, IMG) {
         if(counter === 1){
             localStorage.setItem('Player1', 'https://anapioficeandfire.com/api/characters?' +URL);
             localStorage.setItem('Img1', '' +IMG);
-            
             // Create an alert and say please select player 2
             alert('Please select player 2');
 
@@ -108,6 +108,8 @@ function getStorage() {
   var image2 = document.createElement('img');
   image2.src = img2;
   player2__img.appendChild(image2);
+
+
 
 }
 

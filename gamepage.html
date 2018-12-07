@@ -6,20 +6,20 @@
 	<link rel="stylesheet" href="css/blockelements.css">
 </head>
 
-<body onload="getStorage()">
+<body onload="getStorage(), setPlayers()">
 <div>
 <img src="photos/logo.png" alt="logo">
 </div>
 
 <div class="[ row ] [ bar ]">
-	<div class="col-m-12">
+	<div class="col-m-12"> <!--The brackets don´t work here-->
 
-		<div class="col-m-10 [ bar__headline ]">
+		<div class="col-m-10 [ bar__headline ]"><!--The brackets don´t work here-->
 			Start playing
 		</div>
 
-		<div class="col-m-2 [ bar__link ]">
-			<a href="index.html">Go back
+		<div class="col-m-2 [ bar__link ]"><!--The brackets don´t work here-->
+			<a href="index.html"><li class="[ bar__link--text ]">Go back</li>
 			</a>
 		</div>
 
@@ -36,7 +36,7 @@
 		<div class="[ col-m-4 ]">
 			<div class="[ col-m-12 ]">
 				<div class="[ row ]">
-					
+
 					<div class="[ col-m-6 ]">
 						<p id="player1__name"></p>
 						<div id="player1__img"></div>
@@ -56,106 +56,106 @@
 	    <div class="[ col-m-8 ]  [ board ]">
 				<div class="[ row ]">
 					<div class="[ board_field ]">
-						<p class="[ board__number ]">25</p>
+						<p class="[ board__number ]" id="boardField25">25</p>
 					</div>
 					<div class="[ board_field ]">
-						<p class="[ board__number ]">26</p>
-					</div>
-					<div class="[ board_field ] [ board_field--danger ]">
-						<p class="[ board__number ]">27</p>
+						<p class="[ board__number ]" id="boardField26">26</p>
 					</div>
 					<div class="[ board_field ]">
-						<p class="[ board__number ]">28</p>
+						<p class="[ board__number ]" id="boardField27">27</p>
 					</div>
 					<div class="[ board_field ]">
-						<p class="[ board__number ]">29</p>
+						<p class="[ board__number ]" id="boardField28">28</p>
 					</div>
-					<div class="[ board_field ] [ board_field--img ]">
-						<img src="photos/ironthrone.png" alt="icon of the iron throne">
+					<div class="[ board_field ]">
+						<p class="[ board__number ]" id="boardField29">29</p>
+					</div>
+					<div class="[ board_field ]">
+						<p  class="[ board__number ]" id="boardField23" style="background: url(photos/ironthrone.png) center no-repeat;">&nbsp;</p>
 					</div>
 				</div>
 
 				<div class="[ row ] [ row__reverse ]">
+					<div class="[ board_field ] ">
+						<p class="[ board__number ]" id="boardField19">19</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]" id="boardField20">20</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]" id="boardField21">21</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]" id="boardField22">22</p>
+					</div>
 					<div class="[ board_field ] [ board_field--danger ]">
-						<p class="[ board__number ]">19</p>
+						<p  class="[ board__number ]" id="boardField23" style="background: url(photos/castlerock.png) center no-repeat;">&nbsp;</p>
 					</div>
 					<div class="[ board_field ]">
-						<p class="[ board__number ]">20</p>
-					</div>
-					<div class="[ board_field ]">
-						<p class="[ board__number ]">21</p>
-					</div>
-					<div class="[ board_field ]">
-						<p class="[ board__number ]">22</p>
-					</div>
-					<div class="[ board_field ] [ board_field--img ]">
-						<img src="photos/castlerock.png" alt="icon of castle rock">
-					</div>
-					<div class="[ board_field ]">
-						<p class="[ board__number ]">24</p>
+						<p class="[ board__number ]" id="boardField24">24</p>
 					</div>
 				</div>
 
 				<div class="[ row ]">
 					<div class="[ board_field ]">
-						<p class="[ board__number ]">13</p>
+						<p class="[ board__number ]" id="boardField13">13</p>
 					</div>
 					<div class="[ board_field ]">
-						<p class="[ board__number ]">14</p>
+						<p class="[ board__number ]" id="boardField14">14</p>
 					</div>
-					<div class="[ board_field ]  [ board_field--danger ]">
-						<p class="[ board__number ]">15</p>
-					</div>
-					<div class="[ board_field ]">
-						<p class="[ board__number ]">16</p>
-					</div>
-					<div class="[ board_field ] [ board_field--img ]">
-						<img src="photos/castleblack.png" alt="icon of castle black">
+					<div class="[ board_field ] ">
+						<p class="[ board__number ]" id="boardField15">15</p>
 					</div>
 					<div class="[ board_field ]">
-						<p class="[ board__number ]">18</p>
+						<p class="[ board__number ]" id="boardField16">16</p>
+					</div>
+					<div class="[ board_field ] [ board_field--danger ]"  >
+						<p  class="[ board__number ]" id="boardField17" style="background: url(photos/castleblack.png) center no-repeat;">&nbsp;</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]" id="boardField18">18</p>
 					</div>
 				</div>
 
 			     <div class="[ row ] [ row__reverse ]">
 					<div class="[ board_field ]">
-						<p class="[ board__number ]">7</p>
+						<p class="[ board__number ]" id="boardField7">7</p>
+					</div>
+					<div class="[ board_field ] ">
+						<p class="[ board__number ]" id="boardField8">8</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]" id="boardField9">9</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]" id="boardField10">10</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]" id="boardField11">11</p>
 					</div>
 					<div class="[ board_field ] [ board_field--danger ]">
-						<p class="[ board__number ]">8</p>
-					</div>
-					<div class="[ board_field ]">
-						<p class="[ board__number ]">9</p>
-					</div>
-					<div class="[ board_field ]">
-						<p class="[ board__number ]">10</p>
-					</div>
-					<div class="[ board_field ]">
-						<p class="[ board__number ]">11</p>
-					</div>
-					<div class="[ board_field ] [ board_field--img ]">
-						<img src="photos/dragonstone.png" alt="icon of the dragonstone">
+						<p  class="[ board__number ]" id="boardField12" style="background: url(photos/dragonstone.png) center no-repeat;">&nbsp;</p>
 					</div>
 				</div>
 
 				<div class="[ row ]">
-					<div class="[ board_field ]">
-						<p class="board__number">1</p>
-					</div>
-					<div class="[ board_field ] [ board_field--danger ]">
-						<p class="[ board__number ]">2</p>
+					<div class="[ board_field ]" >
+						<p class="board__number" id="boardField1">1</p>
 					</div>
 					<div class="[ board_field ]">
-						<p class="[ board__number ]">3</p>
+						<p class="[ board__number ]" id="boardField2">2</p>
 					</div>
 					<div class="[ board_field ]">
-						<p class="[ board__number ]">4</p>
+						<p class="[ board__number ]" id="boardField3">3</p>
 					</div>
 					<div class="[ board_field ]">
-						<p class="[ board__number ]">5</p>
+						<p class="[ board__number ]" id="boardField4">4</p>
+					</div>
+					<div class="[ board_field ]">
+						<p class="[ board__number ]" id="boardField5">5</p>
 					</div>
 				    <div class="[ board_field ]">
-				    	<p class="[ board__number ]">6</p>
+				    	<p class="[ board__number ]" id="boardField6">6</p>
 				    </div>		
 				</div>	
 			</div>
