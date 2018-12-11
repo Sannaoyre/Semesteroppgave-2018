@@ -133,6 +133,12 @@ function playTurn(result){
 	else if  (player1Pos == 28 || player2Pos == 28) {
 		setTimeout (trap4, 1000);
 		}
+	else if  (player1Pos == 15 || player2Pos == 15) {
+		setTimeout (forward1, 1000);
+		}
+	else if  (player1Pos == 5 || player2Pos == 5) {
+		setTimeout (forward2, 1000);
+		}
 
 
 	
@@ -169,10 +175,11 @@ function trap1(){
 		el.removeChild(document.getElementById('player2'));
 		player2Pos -= 3;
 	}
-	console.log (player1Pos, player2Pos)
+	
 	setPlayers(player1Pos, player2Pos);
 	switchPlayer();	
 }
+
 
 
 
@@ -190,7 +197,7 @@ function trap2(){
 		el.removeChild(document.getElementById('player2'));
 		player2Pos -= 7;
 	}
-	console.log (player1Pos, player2Pos)
+	
 	setPlayers(player1Pos, player2Pos);
 	switchPlayer();	
 }
@@ -212,7 +219,7 @@ function trap3(){
 		el.removeChild(document.getElementById('player2'));
 		player2Pos -= 2;
 	}
-	console.log (player1Pos, player2Pos)
+	
 	setPlayers(player1Pos, player2Pos);
 	switchPlayer();	
 }
@@ -236,7 +243,52 @@ function trap4(){
 		el.removeChild(document.getElementById('player2'));
 		player2Pos -= 10;
 	}
-	console.log (player1Pos, player2Pos)
+	
+	setPlayers(player1Pos, player2Pos);
+	switchPlayer();	
+}
+
+
+
+
+//------------------------Ladder up------------------------ daenerys
+function forward1(){
+	if (player1){
+		alert('Player1, you met Jorah! Move three steps forward');
+		var el = document.getElementById(board[player1Pos]);
+		el.removeChild(document.getElementById('player1'));
+		player1Pos += 3;
+	}
+
+	else {
+		alert('Player2, you met Jorah! Move three steps forward');
+		var el = document.getElementById(board[player2Pos]);
+		el.removeChild(document.getElementById('player2'));
+		player2Pos += 3;
+	}
+
+	setPlayers(player1Pos, player2Pos);
+	switchPlayer();	
+}
+
+
+
+
+function forward2(){
+	if (player1){
+		alert('Player1, you met Daenerys! She will take you three steps forward');
+		var el = document.getElementById(board[player1Pos]);
+		el.removeChild(document.getElementById('player1'));
+		player1Pos += 3;
+	}
+
+	else {
+		alert('Player2, you met Daenerys! She will take you three steps forward');
+		var el = document.getElementById(board[player2Pos]);
+		el.removeChild(document.getElementById('player2'));
+		player2Pos += 3;
+	}
+
 	setPlayers(player1Pos, player2Pos);
 	switchPlayer();	
 }
