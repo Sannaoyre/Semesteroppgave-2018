@@ -163,14 +163,14 @@ function finished() {
 //-------------------------TRAPS--------------------------------
 function trap1(){
 	if (player1){
-		alert('Oh no! A trap for player 1, you go three steps back');
+		alert('Oh no! A trap for player 1, you must go three steps back');
 		var el = document.getElementById(board[player1Pos]);
 		el.removeChild(document.getElementById('player1'));
 		player1Pos -= 3;
 	}
 
 	else {
-		alert('Oh no! A trap for player 2, you go three steps back');
+		alert('Oh no! A trap for player 2, you must go three steps back');
 		var el = document.getElementById(board[player2Pos]);
 		el.removeChild(document.getElementById('player2'));
 		player2Pos -= 3;
@@ -207,14 +207,14 @@ function trap2(){
 
 function trap3(){
 	if (player1){
-		alert('Oh no! A trap for player 1, you go two steps back');
+		alert('Oh no, a trap! Player 1, you must go two steps back');
 		var el = document.getElementById(board[player1Pos]);
 		el.removeChild(document.getElementById('player1'));
 		player1Pos -= 2;
 	}
 
 	else {
-		alert('Oh no! A trap for player 2, you go two steps back');
+		alert('Oh no, a trap! Player 2, you must go two steps back');
 		var el = document.getElementById(board[player2Pos]);
 		el.removeChild(document.getElementById('player2'));
 		player2Pos -= 2;
@@ -254,14 +254,14 @@ function trap4(){
 //------------------------Ladder up------------------------ daenerys
 function forward1(){
 	if (player1){
-		alert('Player1, you met Jorah! Move three steps forward');
+		alert('Player1, you met Jorah! He will take you three steps forward');
 		var el = document.getElementById(board[player1Pos]);
 		el.removeChild(document.getElementById('player1'));
 		player1Pos += 3;
 	}
 
 	else {
-		alert('Player2, you met Jorah! Move three steps forward');
+		alert('Player2, you met Jorah! He will take you three steps forward');
 		var el = document.getElementById(board[player2Pos]);
 		el.removeChild(document.getElementById('player2'));
 		player2Pos += 3;
