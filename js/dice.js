@@ -117,11 +117,33 @@ function playTurn(result){
 		}
 	}
 
-	setPlayers(player1Pos, player2Pos);
+
+	setPlayers(player1Pos, player2Pos);	
+
+	if (player1Pos == 12 || player2Pos == 12) {
+		setTimeout (trap1, 1000);
+		//trap1(12);	
+	} 
+	else if  (player1Pos == 17 || player2Pos == 17) {
+		setTimeout (trap2, 1000);
+		}
+	else if  (player1Pos == 23 || player2Pos == 23) {
+		setTimeout (trap3, 1000);
+		}
+	else if  (player1Pos == 28 || player2Pos == 28) {
+		setTimeout (trap4, 1000);
+		}
+
+
+	
+	else {
+		switchPlayer();	
+	}
 
 	if (player1Pos == 30 || player2Pos === 30) {
 		setTimeout (finished, 1000)
 	}
+
 	
 }
 
@@ -132,6 +154,112 @@ function finished() {
 
 
 
+//-------------------------TRAPS--------------------------------
+function trap1(){
+	if (player1){
+		alert('Oh no! A trap for player 1, you go three steps back');
+		var el = document.getElementById(board[player1Pos]);
+		el.removeChild(document.getElementById('player1'));
+		player1Pos -= 3;
+	}
+
+	else {
+		alert('Oh no! A trap for player 2, you go three steps back');
+		var el = document.getElementById(board[player2Pos]);
+		el.removeChild(document.getElementById('player2'));
+		player2Pos -= 3;
+	}
+	console.log (player1Pos, player2Pos)
+	setPlayers(player1Pos, player2Pos);
+	switchPlayer();	
+}
+
+
+
+function trap2(){
+	if (player1){
+		alert('Oh no, Player 1! You landed on Castle Black, go seven steps back..');
+		var el = document.getElementById(board[player1Pos]);
+		el.removeChild(document.getElementById('player1'));
+		player1Pos -= 7;
+	}
+
+	else {
+		alert('Oh no, Player 2! You landed on Castle Black, go seven steps back..');
+		var el = document.getElementById(board[player2Pos]);
+		el.removeChild(document.getElementById('player2'));
+		player2Pos -= 7;
+	}
+	console.log (player1Pos, player2Pos)
+	setPlayers(player1Pos, player2Pos);
+	switchPlayer();	
+}
+
+
+
+
+function trap3(){
+	if (player1){
+		alert('Oh no! A trap for player 1, you go two steps back');
+		var el = document.getElementById(board[player1Pos]);
+		el.removeChild(document.getElementById('player1'));
+		player1Pos -= 2;
+	}
+
+	else {
+		alert('Oh no! A trap for player 2, you go two steps back');
+		var el = document.getElementById(board[player2Pos]);
+		el.removeChild(document.getElementById('player2'));
+		player2Pos -= 2;
+	}
+	console.log (player1Pos, player2Pos)
+	setPlayers(player1Pos, player2Pos);
+	switchPlayer();	
+}
+
+
+
+
+
+
+function trap4(){
+	if (player1){
+		alert('The night king got you, Player 1!! Go TEN steps back');
+		var el = document.getElementById(board[player1Pos]);
+		el.removeChild(document.getElementById('player1'));
+		player1Pos -= 10;
+	}
+
+	else {
+		alert('The night king got you, Player 2!! Go TEN steps back');
+		var el = document.getElementById(board[player2Pos]);
+		el.removeChild(document.getElementById('player2'));
+		player2Pos -= 10;
+	}
+	console.log (player1Pos, player2Pos)
+	setPlayers(player1Pos, player2Pos);
+	switchPlayer();	
+}
+
+
+
+
+
+function switchPlayer () {
+		if (player1) {
+	  		player1 = false; 
+	  		player2 = true;
+	  	} else {
+	  		player1 = true; 
+	  		player2 = false;
+		
+  		}	
+}
+
+
+
+
+//------------------The dice----------------------------
 
 var dice = {
   sides: 6,
@@ -140,8 +268,6 @@ var dice = {
     return randomNumber;
   }
 }
-
-
 
 
 
@@ -154,19 +280,10 @@ function printNumber(number) {
 var button = document.getElementById('game__button');
 
 button.onclick = function() {
-	console.log ("player1: ", player1, "player2: ", player2);
   var result = dice.roll();
+  console.log ("player1: ", player1, "player2: ", player2, "result: ", result);
   printNumber(result);
   playTurn (result);
-
-  if (player1) {
-  	player1 = false; 
-  	player2 = true;
-  } else {
-  	player1 = true; 
-  	player2 = false;
-	
-  }
 
   // test to see which global variable is true. FIGURE WHICH PLAYERS TURN IT IS IF ELSE STATEMENT.
   // then you will need to get the number on the dice. YOU HAVE DONE THIS ALREADY
@@ -175,6 +292,8 @@ button.onclick = function() {
   // Remove token from tile which it is on and move it to ID that corresponds to the number rolled on the dice. TODO
 };
 
+
+//-----------------------Shows winner at the final page-------------------------
 
   function showWinner() { 
   var winnerImg = localStorage.getItem('winner');
