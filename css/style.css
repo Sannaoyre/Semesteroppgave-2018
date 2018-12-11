@@ -155,23 +155,32 @@ font-size: 18px;
 }
 
 #player1{
-  width: 25px;
-  height: auto;
+ 
   right: 60px;
   bottom: 5px;
   display: inline-block;
   margin: 0 auto;
   position: absolute;
 
+
+}
+
+img#player1{
+ height: 70px;
+}
+
+img#player2{
+ height: 70px;
 }
 
 #player2{
-  width: 25px;
-  height: auto;
+  
+
   bottom: 5px;
   display: inline-block;
   margin: 0 auto;
   position: absolute;
+
 
 }
 
