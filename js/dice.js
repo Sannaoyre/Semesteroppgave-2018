@@ -153,8 +153,15 @@ function playTurn(result){
 			setTimeout (finished, 1000)
 		} else if (result == 6){
 			//alert ("Samme spiller omigjen");
-			document.getElementById("whichplayer").textContent = "It´s STILL your turn!";
-			document.getElementById("whichplayer").style.color ="red";
+			if (player1 == true) {
+				document.getElementById("whichplayer").textContent = "It´s STILL Player 1´s turn!";
+			}else{
+				document.getElementById("whichplayer").textContent = "It´s STILL Player 2´s turn!";
+			}
+			
+			
+
+			 
 		} else {
 			switchPlayer();	
 			document.getElementById("whichplayer").style.color ="white";
@@ -340,12 +347,17 @@ function switchPlayer () {
 	  		player2 = true;
 	  		document.getElementById("whichplayer").textContent = "Player 2, it´s your turn!";
 	  		document.getElementById("whichplayer").style.color ="white";
+	  		document.getElementById("player2__img").style.opacity = "1"
+	  		document.getElementById("player1__img").style.opacity = "0.5";
+
 
 	  	} else {
 	  		player1 = true; 
 	  		player2 = false;
 	  		document.getElementById("whichplayer").textContent = "Player 1, it´s your turn!";
 	  		document.getElementById("whichplayer").style.color ="white";
+	  		document.getElementById("player1__img").style.opacity = "1"
+	  		document.getElementById("player2__img").style.opacity = "0.5";
 
   		}	
 }
