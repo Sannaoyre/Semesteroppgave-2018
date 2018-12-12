@@ -133,12 +133,16 @@ function playTurn(result){
 	else if  (player1Pos == 28 || player2Pos == 28) {
 		setTimeout (trap4, 1000);
 		}
+	else if  (player1Pos == 4 || player2Pos == 4) {
+		setTimeout (trap5, 1000);
+		}
 	else if  (player1Pos == 15 || player2Pos == 15) {
 		setTimeout (forward1, 1000);
 		}
 	else if  (player1Pos == 5 || player2Pos == 5) {
 		setTimeout (forward2, 1000);
 		}
+	
 
 
 	
@@ -242,6 +246,27 @@ function trap4(){
 		var el = document.getElementById(board[player2Pos]);
 		el.removeChild(document.getElementById('player2'));
 		player2Pos -= 10;
+	}
+	
+	setPlayers(player1Pos, player2Pos);
+	switchPlayer();	
+}
+
+
+
+function trap5(){
+	if (player1){
+		alert('The dragon got you, Player 1!! Go back to start');
+		var el = document.getElementById(board[player1Pos]);
+		el.removeChild(document.getElementById('player1'));
+		player1Pos -= 3;
+	}
+
+	else {
+		alert('The dragon got you, Player 2!! Go back to start');
+		var el = document.getElementById(board[player2Pos]);
+		el.removeChild(document.getElementById('player2'));
+		player2Pos -= 3;
 	}
 	
 	setPlayers(player1Pos, player2Pos);
