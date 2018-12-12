@@ -43,13 +43,13 @@ var board = ["",
 	"boardField30" 
 ];
 
-//console.log ('Hallo?'); 
+
 
 
 //Get Items out of local storage for each user and populate player 1 and player 2 with data.
 function setPlayers(p1=1, p2=1) {
 
-  console.log (p1, p2, player1, player2); 
+  //console.log (p1, p2, player1, player2); 
 
 
 	if (player1 || (p1 == p2 && p1 == 1)) {
@@ -74,10 +74,10 @@ function setPlayers(p1=1, p2=1) {
 
 }
 
-
+//Which player is playing. Sets new token on board and removes the old one.
 function playTurn(result){
 
-	console.log ("Turn: ", player1, player2); 
+	//console.log ("Turn: ", player1, player2); 
 
 	if (player1) {
 		var el = document.getElementById(board[player1Pos]);
@@ -86,16 +86,16 @@ function playTurn(result){
 		console.log ("SubElement: " + image);
 		el.removeChild(image);
 		console.log ("Element: " + el.innerHTML);
-		document.getElementById("whichplayer").textContent = "Player 2, it´s your turn!";
 
+//Token stands on tile 30 even when he is "passing" it. The image of the token is being saved in local storage when he hits tile 30<
 		player1Pos += result;
 
 		if (player1Pos >= 30) {
-			// Player 1 har vunnet
 			player1Pos = 30;
 			var img = localStorage.getItem('Img1');
 			localStorage.setItem('winner', '' + img);
 		}
+
 	} else {
 		var el = document.getElementById(board[player2Pos]);
 		console.log ("Element: " + el.innerHTML);
@@ -103,26 +103,25 @@ function playTurn(result){
 		console.log ("SubElement: " + image);
 		el.removeChild(image);
 		console.log ("Element: " + el.innerHTML);
-		document.getElementById("whichplayer").textContent = "Player 1, it´s your turn!";
 
+//Token stands on tile 30 even when he is "passing" it. The image of the token is being saved in local storage when he hits tile 30<
 		player2Pos += result;
-		if (player2Pos >= 30) {
-			// Player 2 har vunnet
-			player2Pos = 30;
 
+		if (player2Pos >= 30) {
+			player2Pos = 30;
 			var img2 = localStorage.getItem('Img2');
 			localStorage.setItem('winner', '' + img2);
-		
-
 		}
 	}
 
 
+
+//Here are the traps 
 	setPlayers(player1Pos, player2Pos);	
 
 	if (player1Pos == 12 || player2Pos == 12) {
 		setTimeout (trap1, 1000);
-		//trap1(12);	
+			
 	} 
 	else if  (player1Pos == 17 || player2Pos == 17) {
 		setTimeout (trap2, 1000);
@@ -140,23 +139,34 @@ function playTurn(result){
 		setTimeout (forward1, 1000);
 		}
 	else if  (player1Pos == 5 || player2Pos == 5) {
-		setTimeout (forward2, 1000);
+		setTimeout (forward2, 500);
 		}
-	
 
 
 	
+
+
+//Switch player after one has landed on a trap	
 	else {
-		switchPlayer();	
+		//Sends winner to finalpage when hitting or passing tile number 30
+		if (player1Pos == 30 || player2Pos === 30) {
+			setTimeout (finished, 1000)
+		} else if (result == 6){
+			//alert ("Samme spiller omigjen");
+			document.getElementById("whichplayer").textContent = "It´s STILL your turn!";
+			document.getElementById("whichplayer").style.color ="red";
+		} else {
+			switchPlayer();	
+			document.getElementById("whichplayer").style.color ="white";
+		}
 	}
-
-	if (player1Pos == 30 || player2Pos === 30) {
-		setTimeout (finished, 1000)
-	}
-
 	
 }
 
+
+
+
+//------------------------Sends winner to finalpage-------------
 
 function finished() {
 	location.href = 'finalpage.html';
@@ -276,7 +286,8 @@ function trap5(){
 
 
 
-//------------------------Ladder up------------------------ daenerys
+//------------------------Ladder up------------------------ 
+
 function forward1(){
 	if (player1){
 		alert('Player1, you met Jorah! He will take you three steps forward');
@@ -320,23 +331,29 @@ function forward2(){
 
 
 
+//-----------------------Decides who´s turn it is----------------------
 
 
 function switchPlayer () {
 		if (player1) {
 	  		player1 = false; 
 	  		player2 = true;
+	  		document.getElementById("whichplayer").textContent = "Player 2, it´s your turn!";
+	  		document.getElementById("whichplayer").style.color ="white";
+
 	  	} else {
 	  		player1 = true; 
 	  		player2 = false;
-		
+	  		document.getElementById("whichplayer").textContent = "Player 1, it´s your turn!";
+	  		document.getElementById("whichplayer").style.color ="white";
+
   		}	
 }
 
 
 
 
-//------------------The dice----------------------------
+//------------------The dice-----------------------------------------
 
 var dice = {
   sides: 6,
@@ -358,26 +375,21 @@ var button = document.getElementById('game__button');
 
 button.onclick = function() {
   var result = dice.roll();
-  console.log ("player1: ", player1, "player2: ", player2, "result: ", result);
   printNumber(result);
   playTurn (result);
 
-  // test to see which global variable is true. FIGURE WHICH PLAYERS TURN IT IS IF ELSE STATEMENT.
-  // then you will need to get the number on the dice. YOU HAVE DONE THIS ALREADY
-  // add the number on the dice to the tile which the token is on. TODO
-  // Move the the token to that tile: TODO
-  // Remove token from tile which it is on and move it to ID that corresponds to the number rolled on the dice. TODO
 };
+
 
 
 //-----------------------Shows winner at the final page-------------------------
 
   function showWinner() { 
-  var winnerImg = localStorage.getItem('winner');
-  var winnerImage = document.createElement('img');
-  winnerImage.src = winnerImg;
-  winnerImage.setAttribute('id', 'showWinner');
-  winner.appendChild(winnerImage);
+  	var winnerImg = localStorage.getItem('winner');
+  	var winnerImage = document.createElement('img');
+  	winnerImage.src = winnerImg;
+  	winnerImage.setAttribute('id', 'showWinner');
+  	winner.appendChild(winnerImage);
    }
 
 
