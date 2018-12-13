@@ -1,2 +1,2 @@
 # Semesteroppgave-2018
-Semesteroppgave 2018, FEU2 Noroff. "Game of ladders"
+Semester project 2018, FEU2 Noroff. "Game of ladders"
